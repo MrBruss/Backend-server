@@ -18,7 +18,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/mydatabase", {
+mongoose.connect("mongodb+srv://desmondasamoah22:7WRpcRy9vUwfG8AY@cluster0.c4s9f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -137,7 +137,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/mydatabase", {
+mongoose.connect("mongodb+srv://desmondasamoah22:7WRpcRy9vUwfG8AY@cluster0.c4s9f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
