@@ -209,11 +209,6 @@ app.post("/logout", (req, res) => {
 });
 
 
-// ✅ Start Server
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
 
 app.post("/login", async (req, res) => {
   try {
