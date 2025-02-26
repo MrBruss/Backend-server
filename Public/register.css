@@ -1,0 +1,96 @@
+/* Apply to whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Page2.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for form */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Darker background for better readability */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+/* Form Box */
+.form-box {
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+/* Form Heading */
+h2 {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px -10px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.4);
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Placeholder Text */
+input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Links (Register Here / Login Here) */
+p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+    display: block;
+    font-weight: bold;
+}
+
+a {
+    color: #ffc107; /* Bright yellow for visibility */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffdf7e;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('../img/Page2.jpg');
+    
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 370px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .copy-btn {
+            background-color: #007bff;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+        img {
+            margin-top: 3px;
+            max-width: 65%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bitcoin Payment</h1>
+        <p>Enter the amount you want to pay (in USD).</p>
+        <input type="number" id="usd-amount" placeholder="Amount (in USD)" />
+        <button onclick="generatePayment()">Generate Bitcoin</button>
+        <p><strong>Bitcoin Address:</strong></p>
+        <p id="btc-address">1NAZTKv9Yfjrk81aBB9d4ywGEm2ZPAN8ar</p>
+        <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+        <p><strong>QR Code:</strong></p>
+        <img id="static-qr" src="/img/Bitcoin QR.jpg" alt="Bitcoin QR Code">
+        <p id="btc-amount"></p>
+    </div>
+
+    <script>
+        const btcAddress = "1NAZTKv9Yfjrk81aBB9d4ywGEm2ZPAN8ar";
+        const btcConversionRate =  0.00000095; // Example: 1 USD =  0.00000095 BTC (use the actual rate)
+
+        function generatePayment() {
+            const usdAmount = document.getElementById("usd-amount").value;
+            if (!usdAmount || usdAmount <= 0) {
+                alert("Please enter a valid amount in USD.");
+                return;
+            }
+
+            const btcAmount = (usdAmount * btcConversionRate).toFixed(8); // Convert to BTC
+            document.getElementById("btc-amount").textContent = `Equivalent in BTC: ${btcAmount} BTC`;
+        }
+
+        function copyAddress() {
+            navigator.clipboard.writeText(btcAddress).then(() => {
+                alert("Bitcoin address copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy address:", err);
+            });
+        }
+    </script>
+</body>
+</html>
