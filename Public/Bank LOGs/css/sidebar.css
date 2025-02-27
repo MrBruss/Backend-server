@@ -1,0 +1,326 @@
+
+
+:root {
+    --color-primary: #0073ff;
+    --color-white: #e9e9e9;
+    --color-black: #141d28;
+    --color-black-1: #212b38;
+
+  }
+  
+
+
+
+
+/* Sidebar */
+.new-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide initially */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto; /* Allow scrolling */
+    overflow-x: hidden;
+    z-index: 9999;
+    padding-top: 60px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+}
+
+.new-sidebar.active {
+    left: 0;
+}
+
+.new-sidebar h1 {
+    font-size: 22px;
+    margin: 15px;
+    color: cyan;
+}
+
+.new-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.new-sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+}
+
+
+
+
+.new-sidebar ul li a {
+    color: #5ce0ea;
+  text-decoration: none;
+  display: block;
+}
+
+/* Fix submenu positioning */
+.sub-dropdown-menu {
+    
+    padding: 15px; /* Better spacing */
+    
+    display: none;
+    
+}
+
+/* Fix text alignment */
+.sub-dropdown-menu li {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px; /* Adjust for readability */
+    white-space: nowrap;
+}
+
+.sub-dropdown-menu.show {
+    display: block; /* ✅ Show only when clicked */
+}
+
+.drop-btn {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.drop-btn:hover {
+    background: #444;
+}
+
+/* ✅ General Logout Button Styling */
+#logout-btn {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    text-align: center;
+    padding: 12px;
+    background-color: #ff4d4d; /* Red logout button */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 100px auto;
+    font-size: 12px;
+    margin-top: 15px;
+    
+  }
+  
+  /* ✅ Hide Desktop Logout Button on Mobile (Without Removing It) */
+  @media (max-width: 768px) {
+    .desktop-logout {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+  }
+  
+  /* ✅ Hide Mobile Logout Button on Desktop */
+  @media (min-width: 769px) {
+    .mobile-logout {
+        display: none !important; /* Hide mobile logout on desktop */
+    }
+  }
+  
+  /* ✅ Mobile Logout Button Styling */
+  @media (max-width: 768px) {
+    .mobile-logout {
+      width: 90%;  
+      text-align: center;
+      position: relative; /* Change from absolute to relative */
+      background-color: #ff4d4d;  
+      padding: 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin: auto auto 10px auto; /* Push it down */
+      
+      
+      
+  
+    }
+  }
+  
+  /* ✅ Mobile Logout Button Hover Effect */
+  @media (max-width: 768px) {
+    .mobile-logout:hover {
+        background-color: #d32f2f; /* Darker hover effect */
+      
+        
+    }
+  }
+  
+
+
+
+ /* Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust height */
+    background-color: #111111; /* Background color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.top-logo {
+    height: 40px; /* Adjust size */
+      width: 40%;
+      margin-left: 60px;
+      border-radius: 3px;
+}
+
+
+#menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ /* Close Button */
+ #close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: auto;
+    top: 10px;
+    left: 100px;
+      
+}
+
+/* ✅ Show sidebar when active */
+#new-sidebar.active {
+    left: 0;
+}
+
+/* ✅ Custom scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
+#new-sidebar::-webkit-scrollbar {
+    width: 6px; /* ✅ Scrollbar width */
+}
+
+#new-sidebar::-webkit-scrollbar-thumb {
+    background-color: #555; /* ✅ Scrollbar color */
+    border-radius: 3px;
+}
+
+#new-sidebar::-webkit-scrollbar-track {
+    background: #222; /* ✅ Scrollbar background */
+}
+
+
+
+
+.funds-container {
+    display: flex;  /* Use flexbox for alignment */
+    align-items: center; /* Align items in the center */
+    justify-content: center; /* Center them horizontally */
+    gap: 8px; /* Space between buttons */
+    flex-wrap: nowrap; /* Ensure they stay in one line */
+   
+
+}
+
+.funds-container button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+#add-funds-btn {
+    font-size: 13px;
+    padding: 10px 9px;
+    background: #2c7de1d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex; /* Make it flex to align text inside */
+    align-items: center; /* Center text inside the button */
+    justify-content: center; /* Center text */
+    white-space: nowrap; /* Prevent wrapping */
+    
+    
+}
+
+#balance-btn {
+    font-size: 12px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    
+}
+
+
+#add-funds-btn:hover {
+    background-color: #2011c2;
+  }
+
+
+  #balance-btn:hover {
+      background: rgb(118, 2, 2); /* Balance in red */
+  }
+
+
+@media (min-width: 768px) {
+    .header-container {
+        display: none !important;
+    }
+}
+ 
+@media (max-width: 768px) {
+ .logo {
+    font-size: 20px; /* Increase size for better visibility */
+  font-weight: bold; /* Make it stand out */
+  color: #fff !important; /* Maintain consistency */
+  text-transform: uppercase;
+  display: flex; /* Ensure alignment with other elements */
+  align-items: center;
+  margin-left: 20px;
+  padding: 25px;
+  }
+  
+  .logo span {
+    color: var(--color-primary); /* The second part of the logo in a different color */
+    margin-left: 3px; /* Adjust spacing */
+  }
+
+}
+
+  a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits text color from the parent element */
+}
+
+
+
