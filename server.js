@@ -15,9 +15,11 @@ const PORT = 3000;
 app.use(express.json());  // Allows Express to parse JSON (Fixes Postman issue)
 app.use(express.urlencoded({ extended: true })); // Allows form-data parsing
 app.use(cors({
-    origin: "http://swipersweb.com",
-    credentials: true
+  origin: ["https://swipersweb.com", "https://www.swipersweb.com"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 app.use(express.static("public"));
 
 // ✅ Connect to MongoDB
