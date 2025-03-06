@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTER CARDS </title>
 
     <link rel="stylesheet" href="/Public/css/Cards.css">
-</head>
-<body>
 
-    <?php include("../header.php"); ?>  <!-- If the page is inside a folder -->
 
-    <a href="/Public/Payment Gateway/Paymentpage.html"><button class="button"> Add Funds</button></a>
+  
+ </head>
+  <body>
+  <?php include("../header.php"); ?>  <!-- If the page is inside a folder -->
+  
+
+    <a href="/Public/Payment Gateway/Paymentpage.html"> <button class="desktop-addfund"> Add Funds</button> </a>
      
 
     <a href="#"><button class="Balance"> $ 000.00 </button></a>

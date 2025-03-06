@@ -85,6 +85,22 @@ app.post("/login", async (req, res) => {
     }
 });
 
+// Logout Route
+app.post("/logout", (req, res) => {
+    try {
+        req.session.destroy((err) => {
+            if (err) {
+                return res.status(500).json({ success: false, message: "Logout failed." });
+            }
+            res.json({ success: true, message: "Logout successful!" });
+        });
+    } catch (error) {
+        console.error("Logout error:", error);
+        res.status(500).json({ success: false, message: "An error occurred. Please try again." });
+    }
+});
+
+
 // ✅ Start Server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

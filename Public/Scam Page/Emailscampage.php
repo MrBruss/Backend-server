@@ -106,7 +106,9 @@
     </ul>
     </div>
     </nav>
-  
+
+    <div class="wrapper">
+    <div class="main-content">
     <div class="table_responsive">
         <table>
             <thead>
@@ -195,11 +197,16 @@
         </table>
 
     </div>
+    </div>
     
     <footer class="footer">
         <div class="footer-bottom">
             <p>&copy; 2024 &nbsp; SwipersWeb.com &nbsp; |&nbsp; All Rights Reserved.</p>
         </div>
        </footer>
+
+    </div>
+
+
 </body>
 </html>

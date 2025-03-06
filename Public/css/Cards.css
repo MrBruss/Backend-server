@@ -19,15 +19,18 @@
 
 body{
     margin: 0;
+    height: 100%;
     font-family: 'Montserrat', "Roboto",Arial, Helvetica, sans-serif;
     padding-top: 55px;
     background-image: url('../img/Page2.jpg');
+    display: flex;
+    flex-direction: column;
   
     
 }
 
   
-.button {
+ .desktop-addfund {
   position: fixed;
   top: 3px;
   left: 79%;
@@ -41,7 +44,7 @@ body{
 
 }
 
- .Balance{
+.Balance{
   top: 3px;
   left: 88%;
   position: fixed;
@@ -57,10 +60,29 @@ body{
 }
 
 
-button:hover{
+ .desktop-addfund:hover{
   background-color: blue;
   transform: scale(1.05);
 
+}
+
+.Balance:hover{
+  background-color: red;
+  transform: scale(1.05);
+
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-addfund {
+    display: none;
+
+  }
+
+  .Balance {
+    display: none;
+    
+  }
+  
 }
 
 
@@ -256,7 +278,7 @@ table>tbody>tr:hover{
   color: white;
   padding: 20px 10px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: auto;
   border-radius: 5px;
   margin: 30px;
   
@@ -304,12 +326,21 @@ table>tbody>tr:hover{
     
   }
 
-  .footer {
-    margin: 10px;
-    margin-bottom: 20px;
-    
-    
-
-  }
+  
   
 }
+
+/* Push footer to the bottom */
+.main-content {
+  flex-grow: 1; /* This makes sure the footer is always at the bottom */
+  
+  padding-bottom: 50px;
+}
+
+/* Wrapper ensures full-page layout */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces full screen height */
+}
+

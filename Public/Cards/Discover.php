@@ -11,7 +11,7 @@
     
 <?php include("../header.php"); ?>  <!-- If the page is inside a folder -->
 
-    <a href="/Public/Payment Gateway/Paymentpage.html"><button class="button"> Add Funds</button></a>
+    <a href="/Public/Payment Gateway/Paymentpage.html"><button class="desktop-addfund"> Add Funds</button></a>
      
 
     <a href="#"><button class="Balance"> $ 000.00 </button></a>
