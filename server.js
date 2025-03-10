@@ -20,6 +20,18 @@ app.use(cors({
   credentials: true
 }));
 
+app.use(session({
+    secret: "your_secret_key", // Change this to a strong secret
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: false, // Set to true if using HTTPS
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24 // 1 day
+    }
+}));
+
+
 app.use(express.static("public"));
 
 // ✅ Connect to MongoDB
@@ -27,8 +39,8 @@ mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log("MongoDB Connection Error:", err));
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.error('MongoDB Connection Error:', err));
 
 // ✅ User Schema
 const UserSchema = new mongoose.Schema({
@@ -85,20 +97,22 @@ app.post("/login", async (req, res) => {
     }
 });
 
-// Logout Route
-app.post("/logout", (req, res) => {
-    try {
+   // Logout routine
+  app.post("/logout", (req, res) => {
+    if (req.session) {
         req.session.destroy((err) => {
             if (err) {
+                console.error("Logout error:", err);
                 return res.status(500).json({ success: false, message: "Logout failed." });
             }
-            res.json({ success: true, message: "Logout successful!" });
+            res.clearCookie('connect.sid'); // Important
+            return res.json({ success: true, message: "Logout successful!" });
         });
-    } catch (error) {
-        console.error("Logout error:", error);
-        res.status(500).json({ success: false, message: "An error occurred. Please try again." });
+    } else {
+        return res.status(400).json({ success: false, message: "No active session." });
     }
 });
+
 
 
 // ✅ Start Server
